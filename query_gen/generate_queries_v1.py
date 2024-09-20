@@ -1,6 +1,7 @@
 # %%
 import json
 import os
+import re
 from functools import cache
 
 from dotenv import load_dotenv
@@ -15,21 +16,18 @@ intents = ["AboutExchanges", "DamagedDefectiveOrWrongProductFAQ"]
 # %%
 usr_prompts = []
 for intent in intents:
-    sample_guidelines = open(
-        f"/home/suchitg/amazon_help/leafdirs/{intent}/t.txt", "r"
-    ).read()
+    guidelines = open(f"/home/suchitg/amazon_help/leafdirs/{intent}/t.txt", "r").read()
     usr_prompts.append(
         f"""{{
     "title": "{intent}",
-    "content": '''{sample_guidelines}\n'''
+    "content": '''{guidelines}\n'''
 }}"""
     )
-
-print(usr_prompts[1], file=open("test.txt", "w"))
 
 
 @cache
 def get_query(usr_prompt: str):
+    """Generate customer queries for the given intent and its guidelines."""
     res = client.chat.completions.create(
         model="gpt-4o-mini",
         messages=[
@@ -42,6 +40,16 @@ def get_query(usr_prompt: str):
 
 
 # %%
+def remove_numbers(queries_obj: dict):
+    """Remove numbers from the start of the queries."""
+    updated = {
+        k: [re.sub(r"^\d+\.\s", "", i) for i in v]
+        for k, v in queries_obj.items()
+        if k == "customer_queries"
+    }
+    queries_obj["customer_queries"] = updated["customer_queries"]
+
+
 with open("./queries.jsonl", "a") as f:
     for prompt in usr_prompts:
         res = get_query(prompt)
@@ -49,14 +57,9 @@ with open("./queries.jsonl", "a") as f:
         queries_obj["guidelines"] = open(
             f"/home/suchitg/amazon_help/leafdirs/{queries_obj['title']}/t.txt"
         ).read()
+        remove_numbers(queries_obj)
         json.dump(queries_obj, f)
         f.write("\n")
 
 
 # %%
-print(
-    open(
-        f"/home/suchitg/amazon_help/leafdirs/DamagedDefectiveOrWrongProductFAQ/t.txt",
-        "r",
-    ).read()
-)

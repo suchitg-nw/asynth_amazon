@@ -64,18 +64,9 @@ def process_queries(queries: dict[str, str | list[str]]):
 # %%
 with open("../query_gen/queries.jsonl", "r") as f:
     for line in f:
-        queries: dict = json.loads(line)
+        queries = json.loads(line)
         process_queries(queries)
         break
-
-# customer_agent = create_agent("Customer", customer_sys_prompt, "NEVER", "RESOLVED")
-# support_agent = create_agent(
-#     "Support_Agent", support_agent_sys_prompt, "NEVER", "RESOLVED"
-# )
-# chat_result = customer_agent.initiate_chat(
-#     support_agent,
-#     message="how da fuck do knoe if i can exchange my product in my city? y'all have not even put up proper instructions",
-# )
 
 
 # %%
