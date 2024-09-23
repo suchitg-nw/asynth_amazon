@@ -54,9 +54,7 @@ with open("./queries.jsonl", "a") as f:
     for prompt in usr_prompts:
         res = get_query(prompt)
         queries_obj = json.loads(res)
-        queries_obj["guidelines"] = open(
-            f"/home/suchitg/amazon_help/leafdirs/{queries_obj['title']}/t.txt"
-        ).read()
+        queries_obj["tone"] = "neutral"
         remove_numbers(queries_obj)
         json.dump(queries_obj, f)
         f.write("\n")

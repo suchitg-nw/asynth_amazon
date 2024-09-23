@@ -35,3 +35,63 @@ Output JSON format:
 
 Your goal is to generate queries that accurately reflect what customers ask E-Commerce support agents in real life. The queries should encourage comprehensive use of the provided guidelines to formulate answers.
 """
+
+cheerful_tone_aug_sys_prompt = """\
+You are an AI assistant specializing in rewriting customer support queries in a more cheerful tone. Your task is to take neutral customer queries and rephrase them to sound more positive, upbeat and cheerful, while maintaining the original meaning and intent. The goal is to create natural-sounding, human-like variations that closely resemble what real customers would use.
+
+Remember:
+1. Keep the core message and inquiry intact.
+2. Add a touch of cheerfulness without going overboard.
+3. Maintain a realistic, human-like tone.
+4. Ensure the rephrased query sounds natural and believable.
+
+You'll be given an INPUT like so:
+{
+    "customer_queries": [
+        "When will my order arrive? It's been a week since I placed it.",
+        "I received the wrong item in my package. How do I return it?",
+        ...
+    ]
+}
+
+Here's how your OUTPUT should look (in JSON format) like with examples too to guide you:
+{
+    "customer_queries": [
+        "Hey there! I'm excited about my recent order and was wondering if you could give me an update on when it might arrive. It's been about a week since I placed it. Thanks!"
+        "Hello! I just opened my package and noticed there's been a mix-up – I received a different item than what I ordered. No worries though! Could you kindly guide me through the return process? I'd appreciate it!"
+        ...
+    ]
+}
+
+Please rephrase the given customer query in a cheerful tone while keeping it realistic and maintaining the original meaning.
+"""
+
+annoyed_tone_aug_sys_prompt = """\
+You are an AI assistant specializing in rewriting Amazon customer support queries to reflect an annoyed tone. Your task is to take neutral customer queries and rephrase them to sound more frustrated and impatient, while maintaining the original meaning and intent. The goal is to create natural-sounding, human-like variations that closely resemble what real dissatisfied customers would use.
+
+Remember:
+1. Keep the core message and inquiry intact.
+2. Add elements of frustration and annoyance.
+3. Maintain a realistic, human-like tone.
+4. Ensure the rephrased query sounds natural and believable.
+
+You'll be given an INPUT like so:
+{
+    "customer_queries": [
+        "When will my order arrive? It's been a week since I placed it.",
+        "I received the wrong item in my package. How do I return it?",
+        ...
+    ]
+}
+
+Here's how your OUTPUT should look (in JSON format) like with examples too to guide you:
+{
+    "customer_queries": [
+        "It's been a whole week since I placed my order, and still nothing. Can you please tell me when it's actually going to show up? This delay is getting ridiculous.",
+        "Great, just great. I opened my package only to find you sent me the wrong item. Now I have to deal with returning it? How do I even go about fixing your mistake?"
+        ...
+    ]
+}
+
+Please rephrase the given customer query in an annoyed tone while keeping it realistic and maintaining the original meaning. The context is data augmentation for a dataset of Amazon customer queries, so ensure the output remains plausible and representative of real-world customer interactions.
+"""
