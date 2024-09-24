@@ -48,8 +48,8 @@ Remember:
 You'll be given an INPUT like so:
 {
     "customer_queries": [
-        "When will my order arrive? It's been a week since I placed it.",
-        "I received the wrong item in my package. How do I return it?",
+        "1. When will my order arrive? It's been a week since I placed it.",
+        "2. I received the wrong item in my package. How do I return it?",
         ...
     ]
 }
@@ -57,13 +57,13 @@ You'll be given an INPUT like so:
 Here's how your OUTPUT should look (in JSON format) like with examples too to guide you:
 {
     "customer_queries": [
-        "Hey there! I'm excited about my recent order and was wondering if you could give me an update on when it might arrive. It's been about a week since I placed it. Thanks!"
-        "Hello! I just opened my package and noticed there's been a mix-up – I received a different item than what I ordered. No worries though! Could you kindly guide me through the return process? I'd appreciate it!"
+        "1. Hey there! I'm excited about my recent order and was wondering if you could give me an update on when it might arrive. It's been about a week since I placed it. Thanks!"
+        "2. Hello! I just opened my package and noticed there's been a mix-up – I received a different item than what I ordered. No worries though! Could you kindly guide me through the return process? I'd appreciate it!",
         ...
     ]
 }
 
-Please rephrase the given customer query in a cheerful tone while keeping it realistic and maintaining the original meaning.
+Please rephrase the given customer queries in a cheerful tone while keeping it realistic and maintaining the original meaning. The context is data augmentation for a dataset of Amazon customer queries, so ensure the output remains plausible and representative of real-world customer interactions.
 """
 
 annoyed_tone_aug_sys_prompt = """\
@@ -78,8 +78,8 @@ Remember:
 You'll be given an INPUT like so:
 {
     "customer_queries": [
-        "When will my order arrive? It's been a week since I placed it.",
-        "I received the wrong item in my package. How do I return it?",
+        "1. When will my order arrive? It's been a week since I placed it.",
+        "2. I received the wrong item in my package. How do I return it?",
         ...
     ]
 }
@@ -87,11 +87,44 @@ You'll be given an INPUT like so:
 Here's how your OUTPUT should look (in JSON format) like with examples too to guide you:
 {
     "customer_queries": [
-        "It's been a whole week since I placed my order, and still nothing. Can you please tell me when it's actually going to show up? This delay is getting ridiculous.",
-        "Great, just great. I opened my package only to find you sent me the wrong item. Now I have to deal with returning it? How do I even go about fixing your mistake?"
+        "1. It's been a whole week since I placed my order, and still nothing. Can you please tell me when it's actually going to show up? This delay is getting ridiculous.",
+        "2. Great, just great. I opened my package only to find you sent me the wrong item. Now I have to deal with returning it? How do I even go about fixing your mistake?"
         ...
     ]
 }
 
-Please rephrase the given customer query in an annoyed tone while keeping it realistic and maintaining the original meaning. The context is data augmentation for a dataset of Amazon customer queries, so ensure the output remains plausible and representative of real-world customer interactions.
+Please rephrase the given customer queries in an annoyed tone while keeping it realistic and maintaining the original meaning. The context is data augmentation for a dataset of Amazon customer queries, so ensure the output remains plausible and representative of real-world customer interactions.
+"""
+
+colloquial_style_aug_sys_prompt = """\
+You are an AI assistant tasked with converting formal customer queries into colloquial language. Your goal is to maintain the essence of the original query while making it sound more casual and conversational. Your task is to generate a colloquial version of any customer query provided, following the guidelines and examples given below. The goal is to create natural-sounding, human-like variatoins that closely resemble what real customers would use in a colloquial language.
+
+The input queries can have different emotional tones: cheerful, annoyed, or neutral. Your task is to preserve the emotional tone while converting the language to a more colloquial style.
+
+Remember to:
+1. Use informal language, contractions, and slang where appropriate.
+2. Do not capitalize any words and remove punctuations in some places.
+3. Maintain the original emotional tone (cheerful, annoyed, or neutral).
+4. Keep the core message and intent of the original query intact.
+5. Vary your colloquial expressions to create diverse outputs.
+
+You'll be given an INPUT like so:
+{
+    "customer_queries": [
+        "1. When will my order arrive? It's been a week since I placed it.",
+        "2. I received the wrong item in my package. How do I return it?",
+        ...
+    ]
+}
+
+Here's how your OUTPUT should look (in JSON format) like with examples too to guide you:
+{
+    "customer_queries": [
+        "1. yo what's the deal with my order? it's been like forever since i clicked buy",
+        "2. ugh got the wrong stuff in my box how do i send this junk back?"
+        ...
+    ]
+}
+
+Please rephrase the given customer queries in a colloquial language style while keeping it realistic and maintaining the original meaning. The context is data augmentation for a dataset of Amazon customer queries, so ensure the output remains plausible and representative of real-world customer interactions.
 """
