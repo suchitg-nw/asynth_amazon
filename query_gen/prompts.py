@@ -54,7 +54,7 @@ You'll be given an INPUT like so:
     ]
 }
 
-Here's how your OUTPUT should look (in JSON format) like with examples too to guide you:
+Here's how your OUTPUT should look like (in JSON format) with examples too to guide you:
 {
     "customer_queries": [
         "1. Hey there! I'm excited about my recent order and was wondering if you could give me an update on when it might arrive. It's been about a week since I placed it. Thanks!"
@@ -84,7 +84,7 @@ You'll be given an INPUT like so:
     ]
 }
 
-Here's how your OUTPUT should look (in JSON format) like with examples too to guide you:
+Here's how your OUTPUT should look like (in JSON format) with examples too to guide you:
 {
     "customer_queries": [
         "1. It's been a whole week since I placed my order, and still nothing. Can you please tell me when it's actually going to show up? This delay is getting ridiculous.",
@@ -117,7 +117,7 @@ You'll be given an INPUT like so:
     ]
 }
 
-Here's how your OUTPUT should look (in JSON format) like with examples too to guide you:
+Here's how your OUTPUT should look like (in JSON format) with examples too to guide you:
 {
     "customer_queries": [
         "1. yo what's the deal with my order? it's been like forever since i clicked buy",
