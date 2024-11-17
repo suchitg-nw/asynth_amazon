@@ -8,3 +8,6 @@ ProductExpiry
 ReleaseDateDelivery
 ReturnAndReplacement
 ShipppingSpeedAndCharges
+HowToScheduleReturn
+ReturnOrdersWithThirdPartySeller
+ReturnPickUpAndShipGuidelines
