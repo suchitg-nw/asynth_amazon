@@ -49,7 +49,7 @@ This project demonstrates the potential of synthetic data generation to enhance 
 
 ### Reproducing the Dataset
 
-1. Set up the help content directory as described in the [Appendix](#dataset-details) and replace the paths to the help content folder in notebooks under `query_gen/generation_nbs`.
+1. Set up the help content directory as described in the [Appendix](https://docs.google.com/document/d/1CSPYUnLAQtJHqrinShTxA57aBRPOjC4ikApfiLxizL8/edit?tab=t.0#heading=h.g2fra7gshhoh) and replace the paths to the help content folder in notebooks under `query_gen/generation_nbs`.
    You can also find the help content in [this repository](https://github.com/suchitg-nw/amazon_help) under the `leafdirs/` folder.
 2. Run the notebooks in `query_gen/generation_nbs` to generate seed queries and apply augmentations.
 3. Run the individual commands in `agentic_convo/data_gen_cmds.txt` to generate conversations.
@@ -84,4 +84,4 @@ This project demonstrates the potential of synthetic data generation to enhance 
 
 ---
 
-For more details, refer to the [design document]().  
+For more details, refer to the [design document](https://docs.google.com/document/d/1CSPYUnLAQtJHqrinShTxA57aBRPOjC4ikApfiLxizL8/edit?usp=sharing).  
