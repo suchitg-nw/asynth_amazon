@@ -2,8 +2,6 @@
 
 This repository contains the code and resources for generating a synthetic dataset of multi-turn conversations for e-commerce customer support using Large Language Model (LLM) agents. This dataset is designed to train and fine-tune customer support systems effectively by simulating realistic interactions between customers and support agents.
 
----
-
 ## Table of Contents
 
 - [Overview](#overview)
@@ -21,8 +19,6 @@ This repository contains the code and resources for generating a synthetic datas
 
 This project demonstrates the potential of synthetic data generation to enhance customer support systems. Conversations are simulated between two LLM agents, representing a **Customer** and a **Customer Support Agent**, across various intents and product categories. Techniques like **product substitution**, **tone augmentation**, and **language style variations** are applied to ensure dataset diversity and realism.
 
----
-
 ## Features
 
 - **Multi-turn Conversations**: Simulates back-and-forth interactions between customers and agents.
@@ -30,8 +26,6 @@ This project demonstrates the potential of synthetic data generation to enhance 
 - **Tone Variations**: Adds emotional diversity with cheerful, neutral, and annoyed tones.
 - **Scalable and Modular Design**: Easily generate and scale datasets using provided augmentation modules.
 - **Grounded on Real Help Content**: Uses help content sourced from Amazon to ensure conversations are realistic and meaningful.
-
----
 
 ## Getting Started
 
@@ -53,7 +47,6 @@ This project demonstrates the potential of synthetic data generation to enhance 
    You can also find the help content in [this repository](https://github.com/suchitg-nw/amazon_help) under the `leafdirs/` folder.
 2. Run the notebooks in `query_gen/generation_nbs` to generate seed queries and apply augmentations.
 3. Run the individual commands in `agentic_convo/data_gen_cmds.txt` to generate conversations.
----
 
 ## Augmentation Techniques
 
@@ -63,8 +56,6 @@ This project demonstrates the potential of synthetic data generation to enhance 
    - Colloquial English
    - Non-native English (with intentional typos or grammatical errors)
 4. **Typographic Errors**: Adds misspellings and incorrect punctuation for realism.
-
----
 
 ## Directory Structure
 
@@ -82,6 +73,5 @@ This project demonstrates the potential of synthetic data generation to enhance 
 └── requirements.txt
 ```
 
----
 
 For more details, refer to the [design document](https://docs.google.com/document/d/1CSPYUnLAQtJHqrinShTxA57aBRPOjC4ikApfiLxizL8/edit?usp=sharing).  
