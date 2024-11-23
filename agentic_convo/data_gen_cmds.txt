@@ -1,0 +1,6 @@
+python parallel_data_gen.py --input_file ../query_gen/queries_data/queries.jsonl --output_file conversation_data/queries_convos.jsonl --parallel_batches 10
+python parallel_data_gen.py --input_file ../query_gen/queries_data/product_aug.jsonl --output_file conversation_data/prd_convos.jsonl --parallel_batches 10
+python parallel_data_gen.py --input_file ../query_gen/queries_data/tone_augmented.jsonl --output_file conversation_data/tone_aug_convos.jsonl --parallel_batches 3
+python parallel_data_gen.py --input_file ../query_gen/queries_data/colloquial.jsonl --output_file conversation_data/colloquial_convos.jsonl --parallel_batches 3
+python parallel_data_gen.py --input_file ../query_gen/queries_data/typo.jsonl --output_file conversation_data/typo_convos.jsonl --parallel_batches 3
+python parallel_data_gen.py --input_file ../query_gen/queries_data/non_native.jsonl --output_file conversation_data/non_native_convos.jsonl --parallel_batches 3
