@@ -9,7 +9,7 @@ This repository contains the code and resources for generating a synthetic datas
 - [Getting Started](#getting-started)
   - [Installing Dependencies](#installing-dependencies)
   - [Reproducing the Dataset](#reproducing-the-dataset)
-- [Dataset Details](#dataset-details) (TODO: add numbers - queries, conversations, etc.)
+- [Dataset Details](#dataset-details)
 - [Augmentation Techniques](#augmentation-techniques)
 - [Directory Structure](#directory-structure)
 
@@ -47,6 +47,19 @@ This project demonstrates the potential of synthetic data generation to enhance 
    You can also find the help content in [this repository](https://github.com/suchitg-nw/amazon_help) under the `leafdirs/` folder.
 2. Run the notebooks in `query_gen/generation_nbs` to generate seed queries and apply augmentations.
 3. Run the individual commands in `agentic_convo/data_gen_cmds.txt` to generate conversations.
+
+## Dataset Details
+
+A non-exhaustive dataset analysis has been presented in `agentic_convo/analysis.ipynb`.
+
+It contains the following sections:
+- Outlier Conversations
+- Conversation Length Distribution
+- Resolution Status Analysis
+- Error Rates
+- Product Augmentations Analysis
+- Customer Tone Analysis
+- Language Style Analysis
 
 ## Augmentation Techniques
 
